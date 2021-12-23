@@ -10,7 +10,7 @@ alias bs='brew search'
 
 # And God said, "Let there be light.
 # If exa is installed
-if ! type "exa" > /dev/null
+if type "exa" > /dev/null
 then
 	# Use `exa`
 
@@ -19,7 +19,7 @@ then
 
 {% if yadm.os == "Darwin" %}
 # If GNU CoreUtils is installed
-elif ! type "gls" > /dev/null
+elif type "gls" > /dev/null
 then
 	# Use CoreUtils `ls`
   # a: All files except . and ..,
@@ -37,7 +37,7 @@ else
 	# h: use unit suffixes: Byte, Kilobyte, Megabyte, Gigabyte, Terabyte and Petabyte
 	# q: hide control characters with ?,
 	# G: Enable colorized output.
-	alias ls='ls -aohqG`
+	alias ls='ls -aohqG'
 
 {% else %}
 # Not Darwin. Assume GNU CoreUtils
@@ -57,7 +57,7 @@ fi
 {% include ".zsh_settings.txt" %}
 
 
-Preferred editor for local and remote sessions
+# Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vi'
 else
@@ -76,15 +76,15 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 
 # Brew Autocompletion
-if type brew &>/dev/null; then
-    fpath+=\$(brew --prefix)/share/zsh/site-functions
-fi
+# if type brew &>/dev/null; then
+#     fpath+=\$(brew --prefix)/share/zsh/site-functions
+# fi
 
 # Zsh Autocompletion
 # Note: must run after Brew Autocompletion
-autoload -U +X compinit && compinit
-autoload -U +X bashcompinit && bashcompinit
-fpath=(/usr/local/share/zsh-completions \$fpath)
+# autoload -U +X compinit && compinit
+# autoload -U +X bashcompinit && bashcompinit
+# fpath=(/usr/local/share/zsh-completions \$fpath)
 
 
 
@@ -93,7 +93,7 @@ fpath=(/usr/local/share/zsh-completions \$fpath)
 # SML New Jersey
 export PATH=/usr/local/smlnj/bin:$PATH
 
-# (Don't) Use icecream:
+# Do not Use icecream:
 # export PATH=/usr/local/opt/icecream/libexec/icecc/bin:$PATH
 # Deskbert is icecream scheduler
 # export USE_SCHEDULER=192.168.1.229
@@ -102,17 +102,17 @@ export PATH=/usr/local/smlnj/bin:$PATH
 export BUCKAROO_TELEMETRY_OPT_OUT=1
 
 # opam configuration
-test -r ~/.opam/opam-init/init.sh && . ~/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
+test -r $HOME/.opam/opam-init/init.sh && . $HOME/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
 
 
 ## Python ##
 
-# (Don't) Use Homebrew's python
+# Do not Use Homebrew's python
 # export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 # Virtual Environments and virtualenvwrapper.
-export WORKON_HOME=~/.virtualenvs
-# (Don't) Use Homebrew's python
+export WORKON_HOME=$HOME/.virtualenvs
+# Do not Use Homebrew's python
 # export VIRTUALENVWRAPPER_PYTHON=/usr/local/opt/python3/bin/python3
 # source /usr/local/bin/virtualenvwrapper.sh
 

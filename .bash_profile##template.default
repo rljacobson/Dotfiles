@@ -36,7 +36,7 @@ else
 	# h: use unit suffixes: Byte, Kilobyte, Megabyte, Gigabyte, Terabyte and Petabyte
 	# q: hide control characters with ?,
 	# G: Enable colorized output.
-	alias ls='ls -aohqG`
+	alias ls='ls -aohqG'
 
 {% else %}
 # Not Darwin. Assume GNU CoreUtils
@@ -55,7 +55,7 @@ fi
 ## No ZSH includes for bash.
 
 
-Preferred editor for local and remote sessions
+# Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vi'
 else
@@ -86,7 +86,7 @@ export PATH=/usr/local/smlnj/bin:$PATH
 export BUCKAROO_TELEMETRY_OPT_OUT=1
 
 # opam configuration
-test -r ~/.opam/opam-init/init.sh && . ~/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
+test -r $HOME/.opam/opam-init/init.sh && . $HOME/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
 
 
 ## Python ##
@@ -95,7 +95,7 @@ test -r ~/.opam/opam-init/init.sh && . ~/.opam/opam-init/init.sh > /dev/null 2> 
 # export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 # Virtual Environments and virtualenvwrapper.
-export WORKON_HOME=~/.virtualenvs
+export WORKON_HOME=$HOME/.virtualenvs
 # (Don't) Use Homebrew's python
 # export VIRTUALENVWRAPPER_PYTHON=/usr/local/opt/python3/bin/python3
 # source /usr/local/bin/virtualenvwrapper.sh
