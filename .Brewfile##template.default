@@ -1,0 +1,205 @@
+### Prerequisites ###
+# Taps will be used for cask installs.
+
+tap "homebrew/core"
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "buo/cask-upgrade"
+tap "homebrew/cask-fonts"
+
+# Command-line interface to Mac App Store
+brew "mas"
+
+## COMMON ##
+
+# App Store
+mas "Boop", id: 1518425043
+mas "Core Tunnel", id: 1354318707
+mas "Display Menu", id: 549083868
+mas "Keynote", id: 409183694
+mas "Microsoft Remote Desktop", id: 1295203466
+mas "Numbers", id: 409203825
+mas "OmniGraffle", id: 1142578753
+mas "Rar-7zExtractor", id: 483293065
+mas "The Unarchiver", id: 425424353
+mas "Xcode", id: 497799835
+
+brew "asciidoc"
+brew "automake"
+brew "bat"       # A cat replacement with syntax highlighting, line numbers, etc.
+brew "binwalk"   # Searches a binary image for embedded files and executable code
+brew "bison"
+brew "ccache"
+brew "clang-format"
+brew "cmake"
+brew "conan"
+brew "coreutils"
+brew "cppcheck"
+brew "curl"
+brew "exa"       # Modern replacement for 'ls'
+brew "fd"        # Simple, fast and user-friendly alternative to find
+brew "findutils" # Collection of GNU find, xargs, and locate
+brew "flex"
+brew "gdb"
+brew "git"
+brew "git-lfs"
+brew "include-what-you-use"
+brew "libxml2"
+brew "llvm"
+brew "nmap"
+brew "make"
+brew "nano"
+brew "neovim"
+brew "ninja"
+brew "node"
+brew "openjdk"
+brew "openssh"
+brew "pandoc"
+brew "procs"     # Modern replacement for ps written by Rust
+brew "ripgrep"
+brew "rsync"
+brew "screen"
+brew "sd"        # Intuitive find & replace CLI
+brew "tealdeer"  # community-maintained help pages for command-line tools
+brew "tmux"
+brew "tokei"     # Program that allows you to count code, quickly
+brew "trash"
+brew "unrar"
+brew "unzip"
+brew "watchman"
+brew "wget"
+brew "yadm"
+brew "zsh-syntax-highlighting"
+
+
+cask "1password"
+cask "anaconda"
+cask "anydesk"
+cask "bbedit"
+cask "boop"
+cask "cakebrew"
+cask "firefox-developer-edition"
+cask "flux"
+cask "ghidra"
+cask "google-chrome"
+cask "hermes"
+cask "hex-fiend"
+cask "iterm2"
+cask "mactex"
+cask "meld"
+cask "qbittorrent"
+cask "resilio-sync"
+cask "slack"
+cask "sourcetrail"
+cask "typora"
+cask "visual-studio-code"
+cask "vlc"
+cask "vmware-fusion"
+cask "xquartz"
+# Set screen resolution for remote desktop
+cask "yam-display"
+cask "zoom"
+cask "zotero"
+
+
+## Programming Fonts ##
+# The nerd-font variations contain many extra glyphs, including for Powerline.
+# Original font names might be adjusted for license reasons.
+cask "font-anonymice-nerd-font"
+cask "font-caskaydia-cove-nerd-font"
+cask "font-fira-mono-nerd-font"
+cask "font-fira-code-nerd-font"
+cask "font-hasklug-nerd-font"
+cask "font-iosevka-nerd-font"
+cask "font-meslo-lg-nerd-font"
+cask "font-monoid-nerd-font"
+# Hasklig is Source Code Pro with programming ligatures. Uncomment if you use VSCode or Visual Studio.
+cask "font-sauce-code-pro-nerd-font"
+cask "font-space-mono-nerd-font"
+cask "font-victor-mono-nerd-font"
+
+
+
+{% if yadm.class == "work" %}
+
+## WORK ##
+# Use cask for docker
+#brew docker
+#brew docker-machine
+
+
+## WORK ##
+cask "aws-cli"
+cask "binary-ninja"
+cask "cutter"
+cask "docker"
+
+
+{% else %}
+
+## PERSONAL ##
+
+# App Store
+mas "Delicious Library", id: 635124250
+mas "Duplicate Files Sweeper", id: 1438318036
+mas "iMovie", id: 408981434
+mas "Pages", id: 409201541
+mas "PhotoSpiralysis", id: 1369593713
+
+#brew magic-wormhole   # Securely transfers data between computers
+brew "cling"
+brew "exact-image"     # Imagemagick alternative
+brew "graphicsmagick"  # Imagemagick alternative
+brew "imagemagick"
+brew "insect"          # High precision scientific calculator with support for physical units
+brew "intltool"        # Internationalization support
+brew "meson"
+brew "nasm"
+brew "opencv"
+brew "poppler"
+brew "rakudo-star"
+brew "swi-prolog"
+brew "youtube-dl"
+
+## DEVELOPMENT ##
+brew "tree-sitter"
+brew "qt"
+brew "pyqt"
+
+
+## PERSONAL ##
+#facebook/fb/buck
+cask "affinity-designer"
+cask "affinity-photo"
+cask "balenaetcher"
+cask "blender"
+cask "calibre"
+cask "clion"
+cask "coqide"
+cask "fontforge"
+cask "freecad"
+cask "jetbrains-toolbox"
+cask "kicad"
+cask "mathpix-snipping-tool"
+cask "microsoft-teams"
+cask "obs"
+cask "obsidian"
+cask "openscad"
+cask "playonmac"
+cask "ricoh-theta"
+cask "rstudio"
+cask "sigil"
+cask "steam"
+cask "typeface"
+
+## Not automatable yet ##
+# Adobe Illustrator
+# CleanMyMac
+# Fusion360
+# ScanSnap
+# TotalFinder
+# Wacom Tablet drivers
+# scantailor advanced
+# DjVue Reader Pro
+
+{% endif %}
