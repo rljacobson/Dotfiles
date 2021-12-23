@@ -8,51 +8,6 @@ alias bu='brew uninstall'
 alias bs='brew search'
 
 
-# And God said, "Let there be light.
-# If exa is installed
-if type "exa" > /dev/null
-then
-	# Use `exa`
-
-	alias ll='exa -lah --sort=type --group-directories-first --git --color=automatic'
-	alias ls='exa --sort=type --group-directories-first --color=automatic'
-
-{% if yadm.os == "Darwin" %}
-# If GNU CoreUtils is installed
-elif type "gls" > /dev/null
-then
-	# Use CoreUtils `ls`
-  # a: All files except . and ..,
-	# k: kibibytes,
-	# X: sort by extension,
-	# q: hide control characters with ?,
-	# G: hide group on long lists,
-	# h: human readable sizes, color if in terminal, group dirs first.
-	alias ll='gls -lAkXqGh --color=auto --group-directories-first'
-	alias ls='gls'
-else
-	# GNU CoreUtils is not installed, so use macOS version of ls
-	# a: Include directory entries whose names begin with a dot
-	# o: List in long format, but omit the group id
-	# h: use unit suffixes: Byte, Kilobyte, Megabyte, Gigabyte, Terabyte and Petabyte
-	# q: hide control characters with ?,
-	# G: Enable colorized output.
-	alias ls='ls -aohqG'
-
-{% else %}
-# Not Darwin. Assume GNU CoreUtils
-else
-	# a: All files except . and ..,
-	# k: kibibytes,
-	# X: sort by extension,
-	# q: hide control characters with ?,
-	# G: hide group on long lists,
-	# h: human readable sizes, color if in terminal, group dirs first.
-	alias ll='ls -lAkXqGh --color=auto --group-directories-first'
-{% endif %}
-fi
-
-
 ## Settings for ZSH itself ##
 {% include ".zsh_settings.txt" %}
 
@@ -68,7 +23,7 @@ fi
 ## PATH ##
 
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:$HOME/.bin:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=$HOME/bin:$HOME/.bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 # Rust
 export PATH="$HOME/.cargo/bin:$PATH"
@@ -76,15 +31,15 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 
 # Brew Autocompletion
-# if type brew &>/dev/null; then
-#     fpath+=\$(brew --prefix)/share/zsh/site-functions
-# fi
+if type brew &>/dev/null; then
+  fpath+=\$(brew --prefix)/share/zsh/site-functions
+fi
 
 # Zsh Autocompletion
 # Note: must run after Brew Autocompletion
-# autoload -U +X compinit && compinit
-# autoload -U +X bashcompinit && bashcompinit
-# fpath=(/usr/local/share/zsh-completions \$fpath)
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
+#fpath=(/usr/local/share/zsh-completions \$fpath)
 
 
 
@@ -130,3 +85,51 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+
+
+
+# And God said, "Let there be light.
+# If exa is installed
+if type "exa" > /dev/null
+then
+	# Use `exa`
+
+	alias ll='exa -lah --sort=type --group-directories-first --git --color=automatic'
+	alias ls='exa --sort=type --group-directories-first --color=automatic'
+
+{% if yadm.os == "Darwin" %}
+# If GNU CoreUtils is installed
+elif type "gls" > /dev/null
+then
+	# Use CoreUtils `ls`
+  # a: All files except . and ..,
+	# k: kibibytes,
+	# X: sort by extension,
+	# q: hide control characters with ?,
+	# G: hide group on long lists,
+	# h: human readable sizes, color if in terminal, group dirs first.
+	alias ll='gls -lAkXqGh --color=auto --group-directories-first'
+	alias ls='gls'
+else
+	# GNU CoreUtils is not installed, so use macOS version of ls
+	# a: Include directory entries whose names begin with a dot
+	# o: List in long format, but omit the group id
+	# h: use unit suffixes: Byte, Kilobyte, Megabyte, Gigabyte, Terabyte and Petabyte
+	# q: hide control characters with ?,
+	# G: Enable colorized output.
+	alias ls='ls -aohqG'
+
+{% else %}
+# Not Darwin. Assume GNU CoreUtils
+else
+	# a: All files except . and ..,
+	# k: kibibytes,
+	# X: sort by extension,
+	# q: hide control characters with ?,
+	# G: hide group on long lists,
+	# h: human readable sizes, color if in terminal, group dirs first.
+	alias ll='ls -lAkXqGh --color=auto --group-directories-first'
+{% endif %}
+fi
+
