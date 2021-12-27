@@ -14,9 +14,9 @@ alias bs='brew search'
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vi'
+  export EDITOR='vimr'
 else
-  export EDITOR='vim'
+  export EDITOR='nvim'
 fi
 
 
@@ -29,6 +29,9 @@ export PATH=$HOME/bin:$HOME/.bin:/usr/local/bin:/usr/local/sbin:$PATH
 export PATH="$HOME/.cargo/bin:$PATH"
 
 
+## App-Specific Settings
+
+export HOMEBREW_CASK_OPTS="--fontdir=$HOME/Fonts"
 
 # Brew Autocompletion
 if type brew &>/dev/null; then
@@ -41,9 +44,6 @@ autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
 #fpath=(/usr/local/share/zsh-completions \$fpath)
 
-
-
-## App-Specific Settings
 
 # SML New Jersey
 export PATH=/usr/local/smlnj/bin:$PATH
@@ -61,6 +61,8 @@ test -r $HOME/.opam/opam-init/init.sh && . $HOME/.opam/opam-init/init.sh > /dev/
 
 
 ## Python ##
+
+export $PYENV_ROOT=$HOME/.virtualenvs
 
 # Do not Use Homebrew's python
 # export PATH="/usr/local/opt/python/libexec/bin:$PATH"
@@ -87,6 +89,7 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 
+# Something is clobbering the alias for ll, so we put it at the end.
 
 
 # And God said, "Let there be light.
