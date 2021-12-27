@@ -36,5 +36,5 @@ printDivider
 
 printHeading "Installing Brewfile"
 printDivider
-brew bundle --file=.Brewfile
+brew bundle --file=dotfiles/.Brewfile
 printDivider

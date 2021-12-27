@@ -1,0 +1,41 @@
+[user]
+	name = Robert Jacobson
+	email = rljacobson@gmail.com
+[core]
+	autocrlf = input
+	excludesfile = .gitignore_global
+	editor = vi
+[pull]
+	rebase = false
+[push]
+	default = current
+[commit]
+	template = .stCommitMsg
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[diff]
+    tool = meld
+[difftool]
+    prompt = false
+[difftool "meld"]
+    cmd = meld "$LOCAL" "$REMOTE"
+[merge]
+    tool = meld
+[mergetool "meld"]
+    cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[filter "dropoutput_nb"]
+    clean = mathematica-notebook-filter
+    smudge = cat

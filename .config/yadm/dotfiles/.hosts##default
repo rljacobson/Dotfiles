@@ -1,0 +1,9 @@
+#Deskexia     192.168.1.121  #      MAC: 406C8F1E6B4D
+#Routebert    192.168.1.1
+Deskbert      192.168.1.69   # WiFi MAC: 989E634A5062
+Deskexia      192.168.1.179  # WiFi MAC: 7CC3A1A64D0A
+Lapbert       192.168.1.113  # WiFi MAC: 38F9D3A0DB93
+Lapexia       192.168.1.196  # WiFi MAC: 2837371C0E42
+Nasbert       192.168.1.137  #      MAC: 245EBE5D3BF0
+PiHole        192.168.1.130  # Virt MAC: 024256701894
+Lapcyon       192.168.1.58   # WiFI MAC: 88E9FE6BDF5C

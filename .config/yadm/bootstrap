@@ -54,3 +54,5 @@ set -e
 . rust.sh
 # macOS settings
 . macos.sh
+# Symlink dotfiles
+. dotfiles.sh
