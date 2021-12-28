@@ -6,7 +6,8 @@ alias bf='brew info'
 alias bi='brew install'
 alias bu='brew uninstall'
 alias bs='brew search'
-
+alias vim='vimr'
+alias vi='nvim'
 
 ## Settings for ZSH itself ##
 {% include ".zsh_settings.txt" %}
@@ -14,9 +15,9 @@ alias bs='brew search'
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vimr'
-else
   export EDITOR='nvim'
+else
+  export EDITOR='vimr'
 fi
 
 
