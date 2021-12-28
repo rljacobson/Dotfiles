@@ -1,6 +1,6 @@
 [user]
 	name = Robert Jacobson
-	email = rljacobson@gmail.com
+	email = rjacobson@halcyon.ai
 [core]
 	autocrlf = input
 	excludesfile = .gitignore_global

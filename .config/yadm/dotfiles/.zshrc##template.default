@@ -62,13 +62,13 @@ test -r $HOME/.opam/opam-init/init.sh && . $HOME/.opam/opam-init/init.sh > /dev/
 
 ## Python ##
 
-export $PYENV_ROOT=$HOME/.virtualenvs
+export PYENV_ROOT=$HOME/.virtualenvs
 
 # Do not Use Homebrew's python
 # export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 # Virtual Environments and virtualenvwrapper.
-export WORKON_HOME=$HOME/.virtualenvs
+# export WORKON_HOME=$HOME/.virtualenvs
 # Do not Use Homebrew's python
 # export VIRTUALENVWRAPPER_PYTHON=/usr/local/opt/python3/bin/python3
 # source /usr/local/bin/virtualenvwrapper.sh
