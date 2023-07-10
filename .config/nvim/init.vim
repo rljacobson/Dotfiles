@@ -4,6 +4,10 @@
 " - For Neovim: stdpath('data') . '/plugged'
 call plug#begin(stdpath('data') . '/plugged')
 
+" CoC
+" Use release branch (recommend)
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 
 " Color Schemes
 Plug 'morhetz/gruvbox'
@@ -20,9 +24,7 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/telescope.nvim'
 
-" CoC
-" Use release branch (recommend)
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 " Code outline
 Plug 'liuchengxu/vista.vim'
 
@@ -53,6 +55,7 @@ Plug 'stephpy/vim-yaml'
 Plug 'rust-lang/rust.vim'
 Plug 'rhysd/vim-clang-format'
 Plug 'plasticboy/vim-markdown'
+Plug 'zlahham/vim-miranda'
 
 " Initialize plugin system
 call plug#end()
@@ -229,6 +232,11 @@ nnoremap <silent> <space>a  :CocAction<cr>
 """" User Settings """"
 
 colo gruvbox
+" set colorscheme = 'gruvbox'
+
+"  Don't forget set the airline theme as well.
+let g:airline_theme = 'gruvbox'
+
 
 
 let g:highlightedyank_highlight_duration = -1
@@ -372,7 +380,7 @@ let g:vista_stay_on_open=0
 
 " Work around for weird bug. See:
 " https://www.gitmemory.com/issue/liuchengxu/vista.vim/235/595273877
-Vista coc
+"Vista coc
 
 " Leave paste mode when leaving insert mode
 autocmd InsertLeave * set nopaste

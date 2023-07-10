@@ -11,6 +11,8 @@ alias bs='brew search'
 ## Settings for ZSH itself ##
 {% include ".zsh_settings.txt" %}
 
+# Turn on auto-env
+eval "$(direnv hook zsh)"
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
