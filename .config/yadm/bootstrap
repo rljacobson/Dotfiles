@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+# Functions to print nice headers and horizontal rules to the terminal
+. functions.sh
+
+# Trigger admin sudo powers
+. admin.sh
+
+# Update Shell to ZSH
+. shell.sh
+# Install XCode CLI tools.
+. xcode.sh
+# Homebrew
+. homebrew.sh
+# Oh-my-ZSH
+. ohmyzsh.sh
+# Rust
+. rust.sh
+# macOS settings
+. macos.sh
+# Symlink dotfiles
+. dotfiles.sh

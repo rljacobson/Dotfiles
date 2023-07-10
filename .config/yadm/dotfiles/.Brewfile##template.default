@@ -13,7 +13,8 @@ brew "mas"
 ## COMMON ##
 
 # App Store
-mas "Boop", id: 1518425043
+# Boop is cask installed.
+# mas "Boop", id: 1518425043
 mas "Core Tunnel", id: 1354318707
 mas "Display Menu", id: 549083868
 mas "Keynote", id: 409183694
@@ -22,7 +23,8 @@ mas "Numbers", id: 409203825
 mas "OmniGraffle", id: 1142578753
 mas "Rar-7zExtractor", id: 483293065
 mas "The Unarchiver", id: 425424353
-mas "Xcode", id: 497799835
+# Xcode is huge, too big for something I don't use.
+# mas "Xcode", id: 497799835
 
 brew "asciidoc"
 brew "automake"
@@ -107,7 +109,7 @@ cask "zotero"
 # Original font names might be adjusted for license reasons.
 cask "font-anonymice-nerd-font"
 cask "font-caskaydia-cove-nerd-font"
-cask "font-fira-mono-nerd-font"
+#cask "font-fira-mono-nerd-font"
 cask "font-fira-code-nerd-font"
 cask "font-hasklug-nerd-font"
 cask "font-iosevka-nerd-font"
@@ -129,7 +131,7 @@ cask "font-victor-mono-nerd-font"
 
 
 ## WORK ##
-cask "aws-cli"
+cask "awscli"
 cask "binary-ninja"
 cask "cutter"
 cask "docker"
@@ -181,12 +183,12 @@ cask "freecad"
 cask "jetbrains-toolbox"
 cask "kicad"
 cask "mathpix-snipping-tool"
-cask "microsoft-teams"
+#cask "microsoft-teams"
 cask "obs"
 cask "obsidian"
 cask "openscad"
 cask "playonmac"
-cask "ricoh-theta"
+#cask "ricoh-theta"
 cask "rstudio"
 cask "sigil"
 cask "steam"
