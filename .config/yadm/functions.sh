@@ -33,6 +33,23 @@ printStep() {
     $2 || printError "$1"
 }
 
+# The first parameter to `askToRun` is the command (remember to quote it), and if the optional second parameter is `y` or `-y`,
+# then the command is run unconditionally. Otherwise, the user is asked if they wish to run the command?
+askToRun() {
+	if [ "$2" == "y" -o "$2" == "-y" ]
+	then
+		eval "$1"
+	else
+        printf "\nWould you like to run this command? $1 [Y/n]\n"
+        read ANSWER
+        if [ "$ANSWER" == "Y" -o "$ANSWER" == "y" -o -z "$ANSWER" ]
+        then
+            eval "$1"
+        fi
+    fi
+
+	
+}
 
 # shellcheck disable=SC2154
 trap 'ret=$?; test $ret -ne 0 && printf "failed\n\n" >&2; exit $ret' EXIT

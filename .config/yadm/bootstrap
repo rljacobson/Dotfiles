@@ -1,22 +1,29 @@
 #!/usr/bin/env bash
 
+# Running this script with `-y` will unconditionally run all subscripts instead of 
+# asking the user.
+
+# Get the location of the current script
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
+
 # Functions to print nice headers and horizontal rules to the terminal
-. functions.sh
+. ${SCRIPT_DIR}/functions.sh
 
 # Trigger admin sudo powers
-. admin.sh
-
+askToRun ". ${SCRIPT_DIR}/admin.sh" $1
 # Update Shell to ZSH
-. shell.sh
-# Install XCode CLI tools.
-. xcode.sh
+askToRun ". ${SCRIPT_DIR}/shell.sh" $1
+# Install XCode CLI tools
+askToRun ". ${SCRIPT_DIR}/xcode.sh" $1
 # Homebrew
-. homebrew.sh
+askToRun ". ${SCRIPT_DIR}/homebrew.sh" $1
 # Oh-my-ZSH
-. ohmyzsh.sh
+askToRun ". ${SCRIPT_DIR}/ohmyzsh.sh" $1
 # Rust
-. rust.sh
+askToRun ". ${SCRIPT_DIR}/rust.sh" $1
 # macOS settings
-. macos.sh
+askToRun ". ${SCRIPT_DIR}/macos.sh" $1
 # Symlink dotfiles
-. dotfiles.sh
+askToRun ". ${SCRIPT_DIR}/dotfiles.sh" $1
+
